@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    img {
+      width: 100%;
+      height: 90%;
+    }
+
+    .blur-up {
+      -webkit-filter: blur(5px);
+      filter: blur(5px);
+      transition: filter 200ms, -webkit-filter 200ms;
+    }
+
+    .blur-up.lazyloaded {
+      -webkit-filter: blur(0);
+      filter: blur(0);
+    }
+
+  </style>
+</head>
+<body>
+<div class="">
+  <img src="thumb_seatosky.jpg" 
+       data-src="seatosky.jpg"
+       class="lazyload blur-up"
+       alt="kitten in the sky">
+</div>
+
+  <h1>Is this janky?</h1>
+
+  <script src="lazysizes.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
