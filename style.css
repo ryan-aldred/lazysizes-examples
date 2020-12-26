@@ -1,0 +1,41 @@
+*,
+*::before,
+*::after {
+  padding:0;
+  margin:0;
+}
+.img__container {
+  position: relative;
+}
+.img__container:after {
+  content: '';
+  display: block;
+  height: 0;
+  width: 100%;
+  /* 16:9 = 56.25% = calc(9 / 16 * 100%) */
+  padding-bottom: 42.86%;
+}
+.img__container > * {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+img {
+width: 100%;
+height: 90%;
+}
+
+.blur-up {
+-webkit-filter: blur(5px);
+filter: blur(5px);
+transition: filter 200ms, -webkit-filter 200ms;
+}
+
+.blur-up.lazyloaded {
+-webkit-filter: blur(0);
+filter: blur(0);
+}
